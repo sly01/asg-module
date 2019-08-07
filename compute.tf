@@ -15,7 +15,7 @@ resource "aws_launch_configuration" "asg_launch_conf" {
 
   user_data = <<-EOF
   #!/bin/bash
-  echo "Hello, this service is provided from ${var.region}-${var.environment}" > index.html
+  echo "Hello, this service is provided from ${var.region} - ${var.environment}" > index.html
   nohup busybox httpd -f -p "${var.web_port}" &
   EOF
 
